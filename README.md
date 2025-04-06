@@ -16,23 +16,21 @@ This application uses Continuous Integration (CI) and Continuous Deployment (CD)
 
 ## Installation
 
-npm install then node index.js
 
 ## Usage
 
-install inquirer
 
 ## License
 
-This project is licensed under the MIT license.
+None
 
-## Contributing
+## Contributors
 
-Give GitHub Username and link 
+
 
 ## Tests
 
-node index.js
+
 
 ## Questions
 
@@ -40,5 +38,5 @@ If you have any questions about the project, you can reach me at:
 
 - GitHub: [melinanev](https://github.com/melinanev)
 - Email: [melina.l.nevarez@gmail.com](mailto:melina.l.nevarez@gmail.com)
-- Challenge Video: (https://drive.google.com/file/d/1RD2RM12AbkkkPZGCAMNjrYmQSR6VzFQZ/view?usp=sharing)
+- Challenge Video: ()
 
