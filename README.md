@@ -16,9 +16,19 @@ This application uses Continuous Integration (CI) and Continuous Deployment (CD)
 
 ## Installation
 
+npm install
+cd server && npm run build
+npm run seed
 
 ## Usage
 
+```bash
+npm run develop    # Start the application (server + client)
+npm run start      # Start just the server
+npm run dev-test   # Start both the app and Cypress testing interface
+```
+
+Access the application at http://localhost:3000 in your browser.
 
 ## License
 
@@ -30,7 +40,17 @@ None
 
 ## Tests
 
+The application includes Cypress component tests for the Quiz component. These tests verify:
+- Quiz start functionality
+- Question answering functionality
+- Quiz completion and restart functionality
 
+To run component tests:
+```bash
+npm run test-component  # Run all component tests headless
+npm run test-quiz      # Run just the Quiz component test headless
+npm run test-gui       # Open Cypress UI for interactive testing
+```
 
 ## Questions
 

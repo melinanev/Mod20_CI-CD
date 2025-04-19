@@ -1,0 +1,37 @@
+name: Deploy Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        
+      # Configure your deployment target below
+      # This is a placeholder for your actual deployment step
+      - name: Deploy
+        run: |
+          echo "Deploying application to production environment"
+          # Add your deployment commands here
+          # Examples:
+          # - For Netlify: npx netlify-cli deploy --prod
+          # - For Vercel: npx vercel --prod
+          # - For AWS S3: aws s3 sync ./client/dist s3://your-bucket-name/
+          # - For GitHub Pages: cp -r ./client/dist/* ./docs/
