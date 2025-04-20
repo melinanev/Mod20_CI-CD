@@ -1,17 +1,27 @@
 import models from '../models/index.js';
 import db from '../config/connection.js';
 
-export default async (modelName: "Question", collectionName: string) => {
+/**
+ * Clean a database collection if it exists
+ * @param modelName The name of the model to clean
+ * @param collectionName The name of the collection to drop
+ */
+export default async (modelName: "Question", collectionName: string): Promise<void> => {
   try {
-    // Adding a null check to fix the TypeScript error
-    if (!models[modelName] || !models[modelName].db || !models[modelName].db.db) {
+    // Safely access the model's database properties
+    const modelInstance = models[modelName];
+    
+    // Check if the model and its DB properties exist
+    if (!modelInstance || !modelInstance.db || !modelInstance.db.db) {
       throw new Error(`Model ${modelName} or its database connection not found`);
     }
     
-    let modelExists = await models[modelName].db.db.listCollections({
+    // Check if collection exists
+    const modelExists = await modelInstance.db.db.listCollections({
       name: collectionName
-    }).toArray()
+    }).toArray();
 
+    // Drop collection if it exists
     if (modelExists.length) {
       await db.dropCollection(collectionName);
     }
