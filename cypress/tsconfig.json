@@ -7,6 +7,6 @@
       "jsx": "react-jsx",
       "outDir": "./dist"
     },
-    "include": ["**/*.ts", "**/*.tsx"],
-    "exclude": ["support", "support/**/*"]
+    "include": ["**/*.ts", "**/*.tsx"]
+
 }
